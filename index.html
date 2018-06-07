@@ -3,24 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>My portfolio</title>
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="stylesheet" type="text/css" href="style/normalize.css">
     <link rel="stylesheet" type="text/css" href="images/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="font/stylesheet.css">
   	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script> 
 </head>
 
 <body>
-    <div class="header">
+    <header class="header">
         <div class="sprite sprite-logo"></div>
         <div class="social">
-            <div class="sprite sprite-icon-vk"></div>
-            <div class="sprite sprite-icon-fb"></div>
-            <div class="sprite sprite-icon-tw"></div>
-            <div class="sprite sprite-icon-git"></div>
+            <ul class="list_link">
+                <li class="item_links">
+                    <a href="https://vk.com/id_callobock" class="sprite sprite-icon-vk"><div class="hide_text">Вконтакте</div></a>
+                </li>
+                <li class="item_links">
+                    <a href="" class="sprite sprite-icon-fb"><div class="hide_text">Facebook</div></a>
+                </li>
+                <li class="item_links">
+                    <a href="https://twitter.com/Call_O_Bock_rus" class="sprite sprite-icon-tw"><div class="hide_text">Twitter</div></a>
+                </li>
+                <li class="item_links">
+                    <a href="https://github.com/CallOBock/MyWP1" class="sprite sprite-icon-git"><div class="hide_text">GitHub</div></a>
+                </li>
+            </ul>
         </div>
         <div class="gradient"></div>
-    </div>
+    </header>
     <div class="container">
         <div class="navigation">
             <div class="menu">
@@ -90,7 +102,6 @@
                                 <a href="#" class="button">javascript</a>
                                 <a href="#" class="button">git</a>
                             </div>
-                            c
                         </li>
                     </ul>
                 </div>
@@ -126,11 +137,12 @@
             <div class="education">
                 <div class="wrapper">
                     <div class="headerInf">
-                        Основная информация
+                        Образование
                         <div class="blueLine"></div>
                     </div>
                 </div>
-                <ul class="workList">
+                <!-- Вариант 1 -->
+<!--                 <ul class="workList">
                     <li>
                         <div class="sprite sprite-icon-cap"></div>
                         <div>
@@ -149,7 +161,19 @@
                             </ul>
                         </div>
                     </li>
-                </ul>
+                </ul> -->
+                <div class="about_education">
+                    <ul class="listitem_education">
+                        <li class="item_education icon_univ">
+                            <span class="where">Незаконченное высшее. ПГТУ</span>
+                            <span class="when">Сентябрь 2013 по настоящее время</span>
+                        </li>
+                        <li class="item_education icon_course">
+                            <span class="where">Курсы LoftSchool</span> 
+                            <span class="when">Июнь 2018 по настоящее время</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <footer class="footer">
