@@ -1,21 +1,23 @@
 .header {
 	box-sizing: border-box;
     position: relative;
-    top: 0;
     height: 119px;
     background-color: #eff3f7;
-    z-index: 0;
     margin-bottom: 39px;
-    padding-bottom: 34px;
-    max-width: 1920px;
-    min-width: 960px;
+}
+
+.cont_big {
+	max-width: 1200px;
+	min-width: 960px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
 }
 
 .logo {
-	/*margin-left: 10%;*/
-	float:left;
-	margin-left: 99px; 
-    margin-top: 39px;
+	position: absolute;
+	left: 0;
+	top: 39px;
 }
 
 .gradient {
@@ -24,12 +26,18 @@
     background: linear-gradient(to left, #e7eff3 0%, #1c667a 40%, #1c667a 60%, #e7eff3 100%);
     height: 3px;
     width: 100%;
-    z-index: 1;
+}
+
+
+.social {
+    position: absolute;
+    right: 0;
+    top: 39px;
 }
 
 .item_links{
 	margin-right: 24px;
-	float: left;
+	float:left;
 }
 
 .item_links:last-child{
@@ -41,10 +49,8 @@ html {
 }
 
 body {
-    background-image: url(../images/comppattern2.png);
+    background: url(../images/comppattern2.png) repeat;
     position: relative;
-    display: flex;
-    flex-direction: column;
     font-family: Fira Sans;
     height: 100%;
 }
@@ -54,21 +60,18 @@ address{
 }
 
 .container {
-    flex-grow: 1;
+	width: 960px;
+	margin: 0 auto;
 }
 
 .sidebar {
     float: left;
     width: 250px;
-    height: 500px;
-    margin-right: 60px;
-    margin-left: 220px;
 }
 
 .information {
     width: 650px;
-    left: 530px;
-    margin-left: 530px;
+	float: right;
 }
 
 .mainInf,
@@ -94,7 +97,7 @@ address{
 
 .footer {
     height: 77px;
-    width: 100%;
+    min-width: 970px;
     bottom: 0%;
     background-color: #eff3f7;
     position: relative;
@@ -120,6 +123,7 @@ address{
 }
 
 .navigation {
+	overflow: hidden;
     width: 100%;
     height: 219px;
     height: 43.6%;
@@ -135,24 +139,10 @@ address{
     border-radius: 5px;
 }
 
-.social {
-    float: right;
-    margin-right: 100px;
-    margin-top: 35px;
-}
-
-.list_link{
-	 display: inline-block;
-}
 
 .navigation_list {
-    display: block;
+    
     list-style-type: none;
-    padding: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    width: 100%;
-    height: 219px;
 }
 
 .navigation_list>li {
@@ -163,59 +153,40 @@ a {
     text-decoration: none;
 }
 
-.mywork {
+.navigation_item{
+	box-sizing: border-box;
     display: block;
-    position: relative;
-    width: 100%;
     height: 73px;
-    font-family: Fira Sans;
     font-size: 21px;
+    margin: 0 11px;
+    border-top: 2px solid #3ba8c0;;
 }
 
-.mywork>a {
-    padding: 27px 0px 0px 28px;
-    display: block;
-    color: #3ba8c0;
+.navigation_item:first-child {
+	border-top: none;
 }
 
-.connectWithMe {
-    display: block;
-    width: 100%;
-    height: 73px;
-    font-family: Fira Sans;
-    font-size: 21px;
+.navigation_item.active{
+	background-color: #3ba8c0;
+	margin: 0;
+	padding-left: 11px;
+	margin-bottom: -2px;
 }
 
-.connectWithMe>a {
-    box-sizing: padding-box;
-    padding: 28px 28px 30px 28px;
-    display: block;
-    color: #a9aeb9;
+.navigation .navigation_item.active .navigation_link {
+	color: #f9fafb;
+	font-size: 22px;
 }
 
-.author {
-    display: block;
-    width: 100%;
-    height: 73px;
-    background-color: #3ba8c0;
-    border-radius: 5px 5px 0px 0px;
-    font-family: Fira Sans;
-    font-size: 23px;
+.navigation .navigation_link {
+	display: block;
+	color: #959aa8;
+	margin-left: 16px;
+	padding: 20px 0px;
 }
 
-.author>a {
-    padding: 28px 0px 0px 28px;
-    display: block;
-    color: white;
-}
-
-.line {
-    bottom: 0;
-    position: absolute;
-    background-color: #3ba8c0;
-    height: 2px;
-    margin: 0px 10px;
-    width: 230px;
+.navigation .navigation_link:hover{
+	color: #3ba8c0;
 }
 
 ul {
@@ -408,7 +379,6 @@ ul {
 }
 
 .item_links {
-    float: left;
 }
 
 .hide_text {
@@ -443,7 +413,7 @@ ul {
 }
 
 .about_education, .work_ul {
-	padding: 20px 0px 0px 37px;
+	padding: 20px 0px 40px 37px;
 }
 
 .item_education, 
@@ -470,4 +440,16 @@ ul {
 
 .sprite-icon-phone{
 	margin-top: 10px;
+}
+
+.image_wrap {
+	height: 140px;
+	width: 140px;
+	border-radius: 50% 50%;
+	border: 5px solid #3ba8c0;	
+	overflow: hidden;
+}
+
+.avatar_box{
+	width: 100%;
 }
