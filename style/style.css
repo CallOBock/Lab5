@@ -1,12 +1,21 @@
 .header {
+	box-sizing: border-box;
     position: relative;
     top: 0;
-    width: 100%;
     height: 119px;
-    width: : 0px;
     background-color: #eff3f7;
     z-index: 0;
     margin-bottom: 39px;
+    padding-bottom: 34px;
+    max-width: 1920px;
+    min-width: 960px;
+}
+
+.logo {
+	/*margin-left: 10%;*/
+	float:left;
+	margin-left: 99px; 
+    margin-top: 39px;
 }
 
 .gradient {
@@ -18,19 +27,37 @@
     z-index: 1;
 }
 
+.item_links{
+	margin-right: 24px;
+	float: left;
+}
+
+.item_links:last-child{
+	margin-right: 0px;
+}
+
+html {
+	height: 100%;
+}
+
 body {
     background-image: url(../images/comppattern2.png);
     position: relative;
     display: flex;
     flex-direction: column;
     font-family: Fira Sans;
+    height: 100%;
+}
+
+address{
+	font-style: normal;
 }
 
 .container {
     flex-grow: 1;
 }
 
-.navigation {
+.sidebar {
     float: left;
     width: 250px;
     height: 500px;
@@ -57,7 +84,7 @@ body {
 }
 
 .exp {
-    height: 234px;
+    min-height: 234px;
 }
 
 .education {
@@ -92,7 +119,7 @@ body {
     top: 0px;
 }
 
-.menu {
+.navigation {
     width: 100%;
     height: 219px;
     height: 43.6%;
@@ -110,13 +137,15 @@ body {
 
 .social {
     float: right;
-    width: auto;
     margin-right: 100px;
     margin-top: 35px;
-    display: inline-block;
 }
 
-.menu_ul {
+.list_link{
+	 display: inline-block;
+}
+
+.navigation_list {
     display: block;
     list-style-type: none;
     padding: 0px;
@@ -126,7 +155,7 @@ body {
     height: 219px;
 }
 
-.menu_ul>li {
+.navigation_list>li {
     cursor: pointer;
 }
 
@@ -217,7 +246,7 @@ ul {
 .mail {
     background-color: #41b9d4;
     font-size: 17px;
-    padding: 11px 0px 13px 42px;
+    padding: 7px 0px 13px 42px;
 }
 
 .sprite-icon-mail,
@@ -229,18 +258,20 @@ ul {
 
 .number {
     float: left;
-    padding: 0px 40px 7px 0px;
+    padding: 14px 40px 7px 0px;
+}
+
+.number:after{
+	content: ' ';
+	display: block;
+	background-color: white;
+	height: 1px;
 }
 
 .phone {
-    padding: 10px 0px 10px 43px;
+    padding: 0px 0px 10px 43px;
     background-color: #48cbe8;
     font-size: 17px;
-}
-
-.number>a {
-    color: white;
-    text-decoration: underline;
 }
 
 .skype {
@@ -270,10 +301,9 @@ ul {
     width: 100%;
 }
 
-.sprite-icon-face {
-    box-sizing: border-box;
-    margin: 35px 24px 67px 55px;
-    float: left;
+.image_wrap{
+	float:left;
+	margin: 35px 23px 0px 55px;
 }
 
 .infAboutMe {
@@ -371,6 +401,12 @@ ul {
     clear: both;
 }
 
+.cf:after{
+	content: " ";
+    display: table;
+    clear: both;
+}
+
 .item_links {
     float: left;
 }
@@ -389,18 +425,49 @@ ul {
 	background: url(../images/icon-doc.png) 25px center no-repeat;
 }
 
+.icon_portfolio{
+	padding-left: 85px;
+	background: url(../images/icon-portfolio.png) 17px center no-repeat;
+}
+
 .when, .where{
 	display: block;
 }
 
-.about_education {
+.where{
+	font-size: 17px;
+	font-weight: 500;
+}
+.when{
+	font-size: 15px;
+}
+
+.about_education, .work_ul {
 	padding: 20px 0px 0px 37px;
 }
 
-.item_education {
+.item_education, 
+.item_work {
 	margin-bottom: 27px;
 }
 
-.item_education:last-child {
+.item_education:last-child, 
+.item_work:last-child {
 	margin-bottom: 0px;
+}
+
+.contact_text,
+.mail_sub{
+	font-family: Fira Sans;
+	font-style: normal;
+	color: white;
+}
+
+.mail_sub{
+	font-size: 12px;
+	text-align: center;
+}
+
+.sprite-icon-phone{
+	margin-top: 10px;
 }

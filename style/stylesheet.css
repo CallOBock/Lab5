@@ -119,21 +119,7 @@
 }
 
 .sprite-logo {
-    float:left;
     width: 243px;
     height: 42px;
     background-position: -5px -246px;
-    margin-left: 99px; 
-    margin-top: 39px;
-}
-
-
-.Моя_специализация: {
-  font-size: 17px;
-  font-family: "Fira Sans";
-  color: rgb(74, 84, 93);
-  line-height: 1.2;
-  text-align: left;
-  text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.35);
-  position: absolute;
 }

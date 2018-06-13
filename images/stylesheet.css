@@ -32,8 +32,6 @@
     width: 47px;
     height: 47px;
     background-position: -412px -5px;
-    float: left;
-    margin-right: 24px;
 }
 
 .sprite-icon-fb:hover {
@@ -46,7 +44,6 @@
     width: 47px;
     height: 47px;
     background-position: -412px -62px;
-    float: left;
 }
 
 .sprite-icon-git:hover {
@@ -94,8 +91,6 @@
     width: 47px;
     height: 47px;
     background-position: -35px -189px;
-    float:left;
-    margin-right: 24px;
 }
 
 .sprite-icon-tw:hover {
@@ -108,8 +103,6 @@
     width: 47px;
     height: 47px;
     background-position: -149px -189px;
-    float:left;
-    margin-right: 24px;
 }
 
 .sprite-icon-vk:hover{
@@ -122,8 +115,7 @@
     float:left;
     width: 243px;
     height: 42px;
-    background-position: -5px -246px;
-    margin-left: 99px; 
+    background-position: -5px -246px; 
     margin-top: 39px;
 }
 
