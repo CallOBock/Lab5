@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    $login_auth = 'Antosha';
+    require_once "html/data.php";
+    if(isset($_SESSION['message'])){
+        $message = $_SESSION['message'];
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="style/normalize.css">
     <link rel="stylesheet" type="text/css" href="font/stylesheet.css">
   	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script> 
+    <script type="text/javascript" src="js/main.js"></script>
 </head>
 
 <body>
@@ -36,8 +46,8 @@
                             <a href="https://github.com/CallOBock/MyWP1" class="sprite sprite-icon-git"><div class="hide_text">GitHub</div></a>
                         </li>
                     </ul>
-                    <div class="gradient"></div>
                 </div>
+                <div class="gradient"></div>
             </header>
             <!-- /Шапка -->
             <!-- Сайд-бар с блоком контента -->
@@ -54,7 +64,7 @@
                                 <a class="navigation_link" href="#"> Мои работы	</a>
                             </li>
                             <li class="navigation_item">
-                                <a class="navigation_link" href="#"> Связаться со мной </a>
+                                <a class="navigation_link" href="html/connection.php"> Связаться со мной </a>
                             </li>
                         </ul>
                     </nav>
@@ -64,23 +74,18 @@
                         <ul class="contacts_list">
                             <li class="contact_item">Контакты</li>
                             <li class="mail">
-                                <a class="contact_link" href="mailto:callobock.baralginovich@gmail.com">
-                                    <span class="sprite sprite-icon-mail"></span>
-                                    <span class="contact_text">
-                                        Почта Gmail.com 
-                                    </span>
+                                <a class="icon_mail contact_link" href="mailto:callobock.baralginovich@gmail.com">
+                                    <span class="contact_text">Почта Gmail.com</span>
+                                    <span class="mail_sub">callobock.baralginovich@gmail.com</span>
                                 </a>
-                                <span class="mail_sub">callobock.baralginovich@gmail.com</span>
                             </li>
                             <li class="phone">
-                                <a href="tel:+79177169424">
-                                    <span class="sprite sprite-icon-phone"></span>
-                                     <span class="contact_text number">+79177169424</span>
+                                <a class="icon_phone contact_link" href="tel:+79177169424">
+                                    <span class="contact_text number">+79177169424</span>
                                 </a>
                             </li>
                             <li class="skype">
-                                <a href="skype:mr_crabs2011">
-                                    <span class="sprite sprite-icon-skype"></span>
+                                <a  class="icon_skype contact_link" href="skype:mr_crabs2011">
                                     <span class="contact_text">mr_crabs2011</span>
                                 </a>                                
                             </li>
@@ -92,7 +97,7 @@
                 <!-- Изменяемый контент -->
                 <div class="information">
 
-                    <section class="mainInf">
+                    <section class="section_about">
                         <div class="about_body clearfix">
                             <div class="wrapper">
                                 <div class="headerInf">
@@ -125,7 +130,7 @@
                                     </li>
                                     <li>
                                         <div class="hIAM">Ключевые навыки:</div>
-                                        <div>
+                                        <div class="cf">
                                             <a href="#" class="button">html</a>
                                             <a href="#" class="button">css</a>
                                             <a href="#" class="button">javascript</a>
@@ -137,7 +142,7 @@
                         </div>
                     </section>
 
-                    <section class="exp">
+                    <section class="section_about">
                         <div class="wrapper">
                             <div class="headerInf">
                                 Опыт работы
@@ -154,30 +159,14 @@
                                     <div class="where">"ООО Системы безопасности" - Системный администратор</div>
                                     <div class="when">Июнь 2008 - Июль 2010</div>
                                 </li>
-                                                                               
-    <!--                             <li>
-                                    <div class="sprite sprite-icon-portfolio"></div>
-                                    <div>
-                                        <ul>
-                                            <li class="hIAM item_work">"ИП Боровицкий" - Продавец дисков</li>
-                                            <li class="work_date">Сентябрь 2005 - Август 2008</li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="sprite sprite-icon-portfolio"></div>
-                                    <div>
-                                        <ul>
-                                            <li class="hIAM item_work">"ООО Системы безопасности" - Системный администратор</li>
-                                            <li class="work_date">Июнь 2008 - Июль 2010</li>
-                                        </ul>
-                                    </div>
-                                </li> -->
                             </ul>
                         </div>
                     </section>
-
-                    <section class="education">
+                    <?php if ($_SESSION['auth']) {
+                        echo $message;
+                    }
+                    ?>
+                    <section class="section_about">
                         <div class="wrapper">
                             <div class="headerInf">
                                 Образование
@@ -222,14 +211,13 @@
                 </div>
             </div>
         </div>
-    </div>       
-        <footer class="footer">
-            <div class="gradient"></div>
-            <div class="login">
-                <div class="sprite sprite-icon-lock"></div>
-                <div class="copyright"> &#169; 2018. Это мой сайт. Не копируейте его пожалуйста)</div>
-            </div>
-        </footer>
-    </div>
+    </div>     
+    <footer class="footer">
+        <div class="gradient"></div>
+        <div class="wrapp_footer">
+            <a href="html/authorization.php" class="sprite sprite-icon-lock"><div class="hide_text">Авторизация</div></a>
+            <span class="copyright"> &#169; 2018. Это мой сайт. Не копируейте его пожалуйсто)</span>
+        </div>
+    </footer>
 </body>
 </html>

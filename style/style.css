@@ -1,14 +1,14 @@
 .header {
 	box-sizing: border-box;
     position: relative;
-    height: 119px;
+    height: 100px;
     background-color: #eff3f7;
     margin-bottom: 39px;
 }
 
 .cont_big {
 	max-width: 1200px;
-	min-width: 960px;
+	min-width: 970px;
 	height: 100%;
 	margin: 0 auto;
 	position: relative;
@@ -17,7 +17,7 @@
 .logo {
 	position: absolute;
 	left: 0;
-	top: 39px;
+	top: 20px;
 }
 
 .gradient {
@@ -32,7 +32,7 @@
 .social {
     position: absolute;
     right: 0;
-    top: 39px;
+    top: 20px;
 }
 
 .item_links{
@@ -74,47 +74,39 @@ address{
 	float: right;
 }
 
-.mainInf,
-.exp,
-.education {
+.section_about {
     background-color: #eff3f7;
     border-radius: 5px;
     margin-bottom: 26px;
 }
 
-.mainInf {
-    height: 321px;
+.wrapper_content {
+	height: auto!important;
+	position: relative;
+	min-height: 100%;
+	min-width: 970px;
+	overflow: hidden;
 }
 
-.exp {
-    min-height: 234px;
-}
-
-.education {
-    height: 233px;
-    margin-bottom: 39px;
+.wrapper_content:after {
+	content: " ";
+	height: 77px;
+	display: block;
 }
 
 .footer {
+	position: relative;
     height: 77px;
-    min-width: 970px;
-    bottom: 0%;
     background-color: #eff3f7;
-    position: relative;
-    margin-top: 39px;
-}
-
-.login {
-    height: 100%;
-    width: 100%;
-    position: relative;
+  	margin-top: -77px;
+    min-width: 970px;
 }
 
 .copyright {
+	position: absolute;
     text-align: center;
-    width: 100%;
-    padding: 32px 0 8px 0;
-    height: 37px;
+	margin: auto;
+	top: 32px;right: 0;bottom: 8px;left: 0;
 }
 
 .footer .gradient {
@@ -137,6 +129,7 @@ address{
     height: 160px;
     background: #eff3f7;
     border-radius: 5px;
+    overflow: hidden;
 }
 
 
@@ -156,7 +149,6 @@ a {
 .navigation_item{
 	box-sizing: border-box;
     display: block;
-    height: 73px;
     font-size: 21px;
     margin: 0 11px;
     border-top: 2px solid #3ba8c0;;
@@ -170,7 +162,7 @@ a {
 	background-color: #3ba8c0;
 	margin: 0;
 	padding-left: 11px;
-	margin-bottom: -2px;
+	margin-bottom: -3px;
 }
 
 .navigation .navigation_item.active .navigation_link {
@@ -214,18 +206,6 @@ ul {
     padding: 14px 116px 10px 19px;
 }
 
-.mail {
-    background-color: #41b9d4;
-    font-size: 17px;
-    padding: 7px 0px 13px 42px;
-}
-
-.sprite-icon-mail,
-.sprite-icon-phone,
-.sprite-icon-skype {
-    float: left;
-    margin-right: 19px;
-}
 
 .number {
     float: left;
@@ -239,16 +219,59 @@ ul {
 	height: 1px;
 }
 
+.mail {
+    background-color: #41b9d4;
+    font-size: 17px;
+}
+
 .phone {
-    padding: 0px 0px 10px 43px;
     background-color: #48cbe8;
     font-size: 17px;
 }
 
 .skype {
-    padding: 10px 0px 10px 43px;
     background-color: #51daf8;
     font-size: 17px;
+}
+
+.contact_text{
+	display: block;
+	padding-top: 10px
+}
+
+.contact_link {
+	padding-left: 82px;
+	display: block;
+	height: 100%;
+}
+
+.contact_link:hover {
+	border-bottom: 1px solid #fff;
+	box-sizing: border-box;
+}
+
+.icon_mail {
+	background: #41b9d4 url(../images/icon-mail.png) 43px center no-repeat;
+}
+
+.icon_phone {
+	background: #48cbe8 url(../images/icon-phone.png) 43px center no-repeat;
+}
+
+.icon_skype {
+	background: #51daf8 url(../images/icon-skype.png) 43px center no-repeat;
+}
+
+.contact_text,
+.mail_sub{
+	font-family: Fira Sans;
+	font-style: normal;
+	color: white;
+}
+.mail_sub{
+	display: block;
+	font-size: 8px;
+	padding-bottom: 5px;
 }
 
 .headerInf {
@@ -310,7 +333,6 @@ ul {
     margin-bottom: 9px;
     height: 19px;
     max-height: 19px;
-    line-height: 19px;
     vertical-align: middle;
     text-align: center;
     color: #fff;
@@ -352,16 +374,6 @@ ul {
     font-size: 15px;
 }
 
-.sprite-icon-cap {
-    float: left;
-    margin: 27px 29px 0px 55px;
-}
-
-.sprite-icon-doc {
-    float: left;
-    margin: 27px 36px 0px 63px;
-}
-
 .clearfix:before,
 .clearfix:after {
     content: " ";
@@ -385,7 +397,7 @@ ul {
     display: none;
 }
 
-.icon_univ{
+.icon_univ {
 	padding-left: 85px;
 	background: url(../images/icon-cap.png) 17px center no-repeat;
 }
@@ -426,22 +438,6 @@ ul {
 	margin-bottom: 0px;
 }
 
-.contact_text,
-.mail_sub{
-	font-family: Fira Sans;
-	font-style: normal;
-	color: white;
-}
-
-.mail_sub{
-	font-size: 12px;
-	text-align: center;
-}
-
-.sprite-icon-phone{
-	margin-top: 10px;
-}
-
 .image_wrap {
 	height: 140px;
 	width: 140px;
@@ -452,4 +448,79 @@ ul {
 
 .avatar_box{
 	width: 100%;
+}
+
+.login_window {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 400px;
+    height: 250px;
+    background-color: #eff3f7;
+    border: 2px solid #9ee8f8;
+    border-radius: 5px;
+}
+
+.main_content_login{
+    min-height: 640px;
+    position: relative;
+}
+
+.header_login {
+    height: 50px;
+    border-bottom: 10px solid #9ee8f8;
+    position: relative;
+    background-color: #51daf8;
+    margin-bottom: 10px;
+}
+
+.title_login {
+    color: #fbfcfd;
+    font-size: 20px;
+    font-weight: normal;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    text-align: center;
+}
+
+.login_item {   
+    display: block;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.submit.login {
+    width: 100px;
+    margin-left: -50px;
+    left: 50%;
+}
+
+.submit {
+    border-style: none;
+    position: absolute;
+    left: 0;
+    font-weight: 500;
+    font-family: Fira Sans;
+    font-size: 20px;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 4px;
+    background: #51daf8;
+    box-shadow: 0 -2px #47c0db inset;
+    transition: 0.2s;
+}
+.submit:hover{
+    background: #47c0db;
+}
+
+.icon_login {
+    position: absolute;
+    background: url(../images/icon-lock.png) 17px center no-repeat;
+    left: 150px;
 }
