@@ -214,9 +214,13 @@
     </div>     
     <footer class="footer">
         <div class="gradient"></div>
-        <div class="wrapp_footer">
-            <a href="html/authorization.php" class="sprite sprite-icon-lock"><div class="hide_text">Авторизация</div></a>
-            <span class="copyright"> &#169; 2018. Это мой сайт. Не копируейте его пожалуйсто)</span>
+        <div class="wrap_footer">
+            <div class="lock">
+                <a href="html/authorization.php" class="lock_inner">
+                    <div class="hide_text">Авторизация</div>
+                </a>
+            </div>
+            <div class="copyright">&#169; 2018. Это мой сайт. Не копируейте его пожалуйсто.</div>
         </div>
     </footer>
 </body>

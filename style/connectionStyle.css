@@ -1,9 +1,16 @@
+input {outline: none;}
+textarea {outline: none;}
+input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0 50px #fff !important; /* Цвет фона */
+    -webkit-text-fill-color: black !important; /* цвет текста */
+    color: black !important; /* цвет текста */
+}
+
 .section_connection{
 	background-color:  #eff3f7;
     border-radius: 5px;
     margin-bottom: 26px;
 	height: 690px;
-	overflow: hidden;
 }
 
 .wrapper_title {
@@ -23,6 +30,11 @@
 	top: 0;right: 0;bottom: 0;left: 0;
 	height: 24px;
 	text-align: center;
+}
+
+.about_body {
+	border-radius: 5px;
+	overflow: hidden;
 }
 
 .form_connection{
@@ -45,6 +57,15 @@
 .blank_item {
 	display: inline-block;
     float: left;
+	width: 50%;
+	position: relative;
+}
+
+.textarea {
+	margin-top: 20px;
+    display: inline-block;
+    float: left;
+    width: 100%;
 }
 
 .blank_text {
@@ -54,7 +75,6 @@
 
 .first {
 	float:left;
-	margin-bottom: 10px;
 } 
 
 .second {
@@ -67,12 +87,106 @@
 	padding: 2px; 
 }
 
+#name, #email {
+	width: 90%;
+}
+
 .input_textarea {
 	height: 180px;
 	min-width: 418px;
 	resize: none;
 	border: 2px solid #9ee8f8;
+	border-radius: 0px;
 	padding: 4px;
+}
+
+.error {
+	border: 2px solid #ff00007a;
+}
+
+.error_block_name {
+	opacity: 0;
+	display: block;
+	background: #ff6b6b;
+    left: -225px;
+    top: 26px;
+    color: white;
+    text-align: center;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 9px 0px 0px 26px;
+    transition: 0.5s;
+}
+
+.error_block_name:after {
+	content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 10px solid;
+    color: transparent;
+    border-left-color: #ff6b6b;
+    right: -20px;
+    top: 0;
+}
+
+.error_block_email {
+    opacity: 0;
+    display: block;
+    background: #ff6b6b;
+    right: -212px;
+    top: 26px;
+    color: white;
+    text-align: center;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 0px 9px 26px 0px;
+    transition: 0.5s;
+}
+
+.error_block_email:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 10px solid;
+    color: transparent;
+    border-right-color: #ff6b6b;
+    left: -20px;
+    top: 0;	
+}
+
+.error_block_letter {
+    opacity: 0;
+    display: block;
+    background: #ff6b6b;
+    bottom: -14px;
+    color: white;
+    text-align: center;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 0px 0px 26px 26px;
+    transition: 0.5s;	
+}
+
+
+.active {
+	display: block !important;
+	opacity: 1;
+	transition: 1s;
+}
+
+.not_error {
+	border: 2px solid #46be118a;
 }
 
 .blank_reCaptcha {
@@ -96,7 +210,8 @@
 	width: 100%;
 }
 
-.submit {
+.activesub {
+	cursor: pointer;
 	border-style: none;
 	position: absolute;
 	left: 0;
@@ -110,11 +225,12 @@
 	box-shadow: 0 -2px #47c0db inset;
 	transition: 0.2s;
 }
-.submit:hover{
+.activesub:hover{
 	background: #47c0db;
 }
 
 .clear {
+	cursor: pointer;
 	position: absolute;
 	right: 0;
 	border-style: none;
@@ -131,4 +247,18 @@
 
 .clear:hover{
 	background: #5b6567;
+}
+
+.inactive{
+    border-style: none;
+	position: absolute;
+	left: 0;
+	font-weight: 500;
+	font-family: Fira Sans;
+	font-size: 20px;
+	color: white;
+	padding: 5px 15px;
+	border-radius: 4px;
+	background: #6b76794d;
+	transition: 0.2s;
 }

@@ -3,10 +3,10 @@
 	$message = null;
 	$auth = null; 
 	
-    if(isset($_SESSION['massage'])){
-      	$message = $_SESSION['massage'];  
+    if(isset($_SESSION['message'])){
+      	$message = $_SESSION['message'];  
     }
-    unset($_SESSION['massage']);
+    unset($_SESSION['message']);
 	include 'data.php';
 ?>
 
@@ -32,7 +32,7 @@
             <!-- Шапка -->
             <header class="header">
                 <div class="cont_big">
-                    <a class="logo" href=" ">
+                    <a class="logo" href="../index.php">
                         <img src="../images/logo.png" alt="LoftSchool">
                         <span class="hide_text">Сайт портфолио</span>
                     </a>
@@ -72,17 +72,17 @@
                                     <label for="password" class="blank_text">Пароль</label>
                                     <input type="text" class="input_data" name="password">     
                                 </li> 
-                                	<input type="submit" value="Вход" class="submit login">
+                                	<input type="submit" value="Вход" class="submit loginsub">
                         </fieldset>
                     </form>
                  </div>
 			</section>
         </div>
     </div>     
-    <footer class="footer">
+	<footer class="footer">
         <div class="gradient"></div>
-        <div class="wrapp_footer">
-            <span class="copyright"> &#169; 2018. Это мой сайт. Не копируейте его пожалуйсто)</span>
+        <div class="wrap_footer">
+            <div class="copyright">&#169; 2018. Это мой сайт. Не копируейте его пожалуйсто.</div>
         </div>
     </footer>
 </body>

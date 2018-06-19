@@ -1,9 +1,14 @@
 <?php
     session_start();
+    $message = null;
 
     if(isset($_SESSION['message'])){
-    $message = $_SESSION['message'];
-}
+        $message = $_SESSION['message'];
+        unset($_SESSION['message']);
+    }
+
+    require_once 'data.php';
+    require_once 'function.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +23,8 @@
     <link rel="stylesheet" type="text/css" href="../style/normalize.css">
     <link rel="stylesheet" type="text/css" href="../font/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="../style/connectionStyle.css">
-  	<script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script> 
+  	<script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
@@ -27,7 +33,7 @@
             <!-- Шапка -->
             <header class="header">
                 <div class="cont_big">
-                    <a class="logo" href=" ">
+                    <a class="logo" href="../index.php">
                         <img src="../images/logo.png" alt="LoftSchool">
                         <span class="hide_text">Сайт портфолио</span>
                     </a>
@@ -84,7 +90,7 @@
                                 </a>
                             </li>
                             <li class="skype">
-                                <a  class="icon_skype contact_link" href="skype:mr_crabs2011">
+                                <a class="icon_skype contact_link" href="skype:mr_crabs2011">
                                     <span class="contact_text">mr_crabs2011</span>
                                 </a>                                
                             </li>
@@ -94,9 +100,8 @@
                 </aside>
                 <!-- /Левые блоки -->
                 <!-- Изменяемый контент -->
-
                 <div class="information">
-
+                    <?php echo $message?>
                     <section class="section_connection">
                         <div class="about_body">
                             <div class="wrapper_title">
@@ -105,33 +110,31 @@
                         </div>
                         <!-- Форма -->
                         <div class="form_connection">
-                            <form action="" method="get">
+                            <form action="action_mail.php" method="post" enctype="multipart/form-data" class="form" id="form">
                                 <fieldset class="blank cf">
                                     <ul class="blank_list cf">
                                         <li class="blank_item first">
-                                            <label for="name" class="blank_text">Имя</label>
-                                            <input type="text" class="input_data" name="name" placeholder="Как к вам обращаться">
+                                            <label for="name" class="blank_text">Имя*</label>
+                                            <input type="text" class="input_data" id="name" name="name" placeholder="Как к вам обращаться">
+                                            <div class="error_block_name"></div>
                                         </li>
                                         <li class="blank_item second">
                                             <label for="email" class="blank_text">Email</label>
-                                            <input type="text" class="input_data" name="email" placeholder="Как с  вами связаться">     
+                                            <input type="text" class="input_data" id="email" name="email" placeholder="Как с  вами связаться">
+                                            <div class="error_block_email"></div>  
                                         </li> 
                                         <li class="blank_item textarea">
                                             <label for="input_textarea" class="blank_text">Сообщение</label>
-                                            <textarea class="input_textarea" placeholder="Краткое описание проблемы"></textarea>
+                                            <textarea class="input_data input_textarea" id="input_textarea" name="input_textarea" placeholder="Краткое описание проблемы"></textarea>
+                                            <div class="error_block_letter"></div>
                                         </li>                                                                     
                                     </ul>
-                                    <span class="blank_text_reCaptcha">Введите код, указанный на картинкe</span>
                                     <div class="blank_reCaptcha cf">
-                                        <div class="img">Картинка</div>
-                                        <input type="text" class="input_reCaptcha"> 
+                                        <div class="g-recaptcha" data-sitekey="6LfmWl8UAAAAAF-rEgzrn69YFyfZiyNtedUVtgUm"></div> 
                                     </div>
-                                    <input type="submit" value="Отправить" class="submit">
+                                    <input type="submit" value="Отправить" class="submit inactive" disabled="disabled">
+                                    <!--  -->
                                     <input type="reset" value="Очистить" class="clear">
-                                    <!-- <div class="wrapper_reCaptcha cf">
-                                            <div class="img">Картинка</div>
-                                            <
-                                        </div> -->
                                 </fieldset>
                             </form>
                         </div>
@@ -143,13 +146,17 @@
         </div>
     </div>       
         <footer class="footer">
-            <div class="gradient"></div>
-            <div class="wrapp_footer">
-                <a href="authorization.php" class="sprite sprite-icon-lock"><div class="hide_text">Авторизация</div></a>
-                <span class="copyright"> &#169; 2018. Это мой сайт. Не копируейте его пожалуйста)</span>
+        <div class="gradient"></div>
+        <div class="wrap_footer">
+            <div class="lock">
+                <a href="authorization.php" class="lock_inner">
+                    <div class="hide_text">Авторизация</div>
+                </a>
             </div>
-        </footer>
+            <div class="copyright">&#169; 2018. Это мой сайт. Не копируейте его пожалуйсто.</div>
+        </div>
+    </footer>
     </div>
-    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script> 
 </body>
 </html>

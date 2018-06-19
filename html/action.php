@@ -8,17 +8,17 @@ require_once "data.php";
 
 if(empty($login) || empty($password)){
 
-	$_SESSION['massage'] = "Заполните все поля";
+	$_SESSION['message'] = "Заполните все поля";
 	header('Location: authorization.php');
 
 }elseif (($login != $login_auth) || ($password != $pass_auth)){
 
-	$_SESSION['massage'] = "Неверное имя пользователя или пароль";
+	$_SESSION['message'] = "Неверное имя пользователя или пароль";
 	header('Location: authorization.php');
 
 }else{
 
-	$_SESSION['massage'] = 'Вы успешно залогинены';
+	$_SESSION['message'] = 'Вы успешно залогинены';
 	$_SESSION['auth'] = true;
 	header('Location: ../index.php');
 }
